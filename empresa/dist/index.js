@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const empresa_1 = require("./models/empresa");
+const endereco_1 = require("./models/endereco");
+const funcionario_1 = require("./models/funcionario");
+const telefone_1 = require("./models/telefone");
+const descritorempresa_1 = require("./utils/descritorempresa");
+const endereco = new endereco_1.Endereco(456, "Rua das Palmeiras", "Centro", "Rio de Janeiro");
+const telefone1 = new telefone_1.Telefone("021", "98765-4321");
+const telefone2 = new telefone_1.Telefone("021", "92345-6789");
+const telefones = [telefone1, telefone2];
+const funcionario1 = new funcionario_1.Funcionario("Bruce Wayne", "789012", "111.222.333-44", endereco, telefone1);
+const funcionario2 = new funcionario_1.Funcionario("Diana Prince", "345678", "555.666.777-88", endereco, telefone2);
+const funcionarios = [funcionario1, funcionario2];
+const empresa = new empresa_1.Empresa(funcionarios, endereco, "Wayne Enterprises LTDA", "Wayne Tech", "12.345.678/0001-99", telefones);
+const descritor = new descritorempresa_1.DescritorEmpresa();
+descritor.descrever(empresa);
